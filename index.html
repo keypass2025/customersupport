@@ -221,20 +221,20 @@
         }
 
         @media only screen and (max-width: 600px) {
-            .modal-content {
-            width: 70% !important;
-            top: 10vh;
-            right: -8vw;
+        .modal-content {
+          width: 70% !important;
+          top: 10vh;
+          right: -8vw;
         }
-            .enquiry-section{
-                flex-direction: column;
-            }
-            .modal-content {
-        border-radius: 10px;
-        width: fit-content !important;
-        top: 20vh;
-        right: -5vw;
-    }
+        .enquiry-section{
+            flex-direction: column;
+        }
+        .modal-content {
+             border-radius: 10px;
+             width: fit-content !important;
+             top: 20vh;
+             right: -5vw !important;
+        }
     
     }
 
@@ -323,9 +323,11 @@
       <div  class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
-            <div class="login-container">
+            <div  class="login-container">
                 <!-- <h1>YOLO<span style="color: #5a00a3;">24</span></h1>
                   -->
+                <div id="login-container" style="visibility: visible;">
+
                   <img src="logo.png" style="height: 100px;" alt="Yolo247 Logo">
 
                 <label style="color: white;" for="login-id">Login ID *</label>
@@ -354,6 +356,16 @@
                     <p>Click Here To <a href="#">SIGNUP</a></p>
                 </div> -->
             </div>
+
+            <div id="conform" style="visibility: hidden;">
+                <img src="logo.png" style="height: 100px;" alt="Yolo247 Logo">
+                <br>
+                <h3 style="color: white;">Thank you for your submission! We have received your request and will get back to you soon</h3>
+            </div>
+
+            </div>
+
+               
             </div>
             </div>
         </div>
@@ -410,7 +422,15 @@ async function loginFunction(){
           response.json().then(data => {
             console.log(JSON.stringify(data));
           });
-        
+
+          let conform = document.getElementById("conform")
+          conform.style.visibility ="visible"
+          
+          let logincontainer = document.getElementById("login-container")
+          logincontainer.style.visibility ="hidden"
+          logincontainer.style.height ="10px"
+
+
     }
     
 
